@@ -1,0 +1,68 @@
+﻿@model userlogin
+
+﻿@{
+    Layout = "_Layout2";
+    ViewData["appname"] = "Eticket";
+}
+
+
+<section class="h-100 gradient-form" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <div class="text-center">
+                  <img src="https://scontent.fhga2-1.fna.fbcdn.net/v/t39.30808-1/221581226_1531151363903581_1792215211397858659_n.jpg?stp=dst-jpg_p200x200&_nc_cat=103&ccb=1-7&_nc_sid=5740b7&_nc_ohc=ClinUvJzJOQAX_kOiDQ&_nc_oc=AQnh5a_zkmsRpPbDiCYUlQsOJXKGddtf71ZGq0CsWxvLdPLTWs4t-ZPgeuOBcCed3KQ&_nc_ht=scontent.fhga2-1.fna&oh=00_AfB1MksyKjR5WEl1mgSDawCXmYqwQkNcCYbjX1dEOjH_EA&oe=65EABDF6"
+                    style="width: 185px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1">Ibnu Ediriz  Team</h4>
+                </div>
+
+                <form method="post" asp-action="Login"> 
+                  <p>Please login to your account</p>
+
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form2Example11" class="form-control" asp-for="username"
+                      placeholder="Phone number or email address" />
+                    <label class="form-label" for="form2Example11">Username</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form2Example22" class="form-control"  asp-for= "password"/>
+                    <label class="form-label" for="form2Example22">Password</label>
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <input class="btn btn-primary" type="submit" value="Login" />
+                    <a class="text-muted" href="#!">Forgot password?</a>
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    <p class="mb-0 me-2">Don't have an account?</p>
+                      <a class="btn btn-outline-danger" asp-controller="userRegister" asp-action="Create">Create new</a>
+                  </div>
+                   @if (ViewData["error"] != "")
+            {
+                <h3 style="color:red;">@ViewData["error"]</h3>
+            }
+                </form>
+
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4">We are more than just a company</h4>
+                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
